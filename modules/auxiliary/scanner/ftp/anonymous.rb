@@ -22,7 +22,8 @@ class MetasploitModule < Msf::Auxiliary
 
     register_options(
       [
-        Opt::RPORT(21),
+        OptInt.new('RPORT', [false, "The port target", 21])
+        #Opt::RPORT(9999),
       ])
   end
 

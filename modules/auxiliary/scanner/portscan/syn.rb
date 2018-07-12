@@ -66,7 +66,6 @@ class MetasploitModule < Msf::Auxiliary
     ports.each do |dport|
       host_queue.each do |dhost|
         shost, sport = getsource(dhost)
-
         self.capture.setfilter(getfilter(shost, sport, dhost, dport))
 
         # Add the delay based on JITTER and DELAY if needs be

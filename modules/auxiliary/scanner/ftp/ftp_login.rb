@@ -36,7 +36,7 @@ class MetasploitModule < Msf::Auxiliary
     register_options(
       [
         Opt::Proxies,
-        Opt::RPORT(21),
+        OptInt.new('RPORT', [false, "The port target", 21]),
         OptBool.new('RECORD_GUEST', [ false, "Record anonymous/guest logins to the database", false])
       ])
 

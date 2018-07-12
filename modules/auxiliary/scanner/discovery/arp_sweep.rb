@@ -62,7 +62,7 @@ class MetasploitModule < Msf::Auxiliary
         while(reply = getreply())
           next unless reply.is_arp?
           company = OUI_LIST::lookup_oui_company_name(reply.arp_saddr_mac)
-          print_good("#{reply.arp_saddr_ip} appears to be up (#{company}).")
+          print_good("#{reply.arp_saddr_ip} appears to be up (#{reply.arp_saddr_mac}).")
           report_host(:host => reply.arp_saddr_ip, :mac=>reply.arp_saddr_mac)
           report_note(:host  => reply.arp_saddr_ip, :type  => "mac_oui", :data  => company)
         end
